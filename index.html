@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen de Gato</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Imagen de Gato</h1>
+        <img id="catImage" src="" alt="Imagen de gato">
+        <button id="showCatBtn">Mostrar imagen de gato</button>
+    </div>
+
+    <script>
+        // Función para obtener una imagen de gato de la API y mostrarla
+        function getCatImage() {
+            // Hacer la solicitud a la API de gatos
+            fetch("https://api.thecatapi.com/v1/images/search")
+                .then(response => response.json())
+                .then(data => {
+                    const imageUrl = data[0].url;
+                    
+                    // Actualizar la imagen de gato
+                    const imgElement = document.getElementById("catImage");
+                    imgElement.src = imageUrl;
+                })
+                .catch(error => {
+                    console.error("Error al obtener la imagen de gato:", error);
+                });
+        }
+
+        // Asociar la función getCatImage con el botón
+        document.getElementById("showCatBtn").addEventListener("click", getCatImage);
+    </script>
+</body>
+</html>

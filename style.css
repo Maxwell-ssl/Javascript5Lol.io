@@ -1,0 +1,40 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Estilos para la imagen de gato */
+#catImage {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* Estilos para el botón */
+#showCatBtn {
+    background-color: #007BFF;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#showCatBtn:hover {
+    background-color: #0056b3;
+}
